@@ -1,0 +1,182 @@
+{
+  "accountAttribute": {
+    "prefix": "accountAttribute",
+    "body": "{\r\n  \"attributes\": {\r\n    \"sourceName\": \"Workday\",\r\n    \"attributeName\": \"DEPARTMENT\"\r\n  },\r\n  \"type\": \"accountAttribute\",\r\n  \"name\": \"Test Account Attribute Transform\"\r\n}",
+    "description": "accountAttribute"
+  },
+  "base64Decode": {
+    "prefix": "base64Decode",
+    "body": "{\r\n  \"type\": \"base64Decode\",\r\n  \"name\": \"Test Base64 Decode Transform\"\r\n}",
+    "description": "base64Decode"
+  },
+  "base64Encode": {
+    "prefix": "base64Encode",
+    "body": "{\r\n  \"type\": \"base64Encode\",\r\n  \"name\": \"Test Base64 Encode Transform\"\r\n}",
+    "description": "base64Encode"
+  },
+  "concat": {
+    "prefix": "concat",
+    "body": "{\r\n  \"attributes\": {\r\n    \"values\": [\r\n      \"value1\",\r\n      \" \",\r\n      \"value2\"\r\n    ]\r\n  },\r\n  \"type\": \"concat\",\r\n  \"name\": \"Test Concat Transform\"\r\n}",
+    "description": "concat"
+  },
+  "conditional": {
+    "prefix": "conditional",
+    "body": "{\r\n  \"attributes\": {\r\n    \"expression\": \"foo eq foo\",\r\n    \"positiveCondition\": \"true\",\r\n    \"negativeCondition\": \"false\"\r\n  },\r\n  \"type\": \"conditional\",\r\n  \"name\": \"Test Conditional Transform\"\r\n}",
+    "description": "conditional"
+  },
+  "dateCompare": {
+    "prefix": "dateCompare",
+    "body": "{\r\n  \"attributes\": {\r\n    \"firstDate\": {\r\n      \"attributes\": {\r\n        \"sourceName\": \"HR Source\",\r\n        \"attributeName\": \"termination_date\"\r\n      },\r\n      \"type\": \"accountAttribute\"\r\n    },\r\n    \"secondDate\": \"now\",\r\n    \"operator\": \"gt\",\r\n    \"positiveCondition\": \"active\",\r\n    \"negativeCondition\": \"terminated\"\r\n  },\r\n  \"type\": \"dateCompare\",\r\n  \"name\": \"Test Date Compare Transform\"\r\n}",
+    "description": "dateCompare"
+  },
+  "dateFormat": {
+    "prefix": "dateFormat",
+    "body": "{\r\n  \"attributes\": {\r\n    \"inputFormat\": \"EPOCH_TIME_JAVA\",\r\n    \"outputFormat\": \"ISO8601\"\r\n  },\r\n  \"type\": \"dateFormat\",\r\n  \"name\": \"Test Date Format Transform\"\r\n}",
+    "description": "dateFormat"
+  },
+  "dateMath": {
+    "prefix": "dateMath",
+    "body": "{\r\n  \"attributes\": {\r\n    \"expression\": \"+3M/h\",\r\n    \"roundUp\": true,\r\n    \"input\": {\r\n      \"attributes\": {\r\n        \"sourceName\": \"HR Source\",\r\n        \"attributeName\": \"startDate\"\r\n      },\r\n      \"type\": \"accountAttribute\"\r\n    }\r\n  },\r\n  \"type\": \"dateMath\",\r\n  \"name\": \"Test Date Math Transform\"\r\n}",
+    "description": "dateMath"
+  },
+  "decomposeDiacriticalMarks": {
+    "prefix": "decomposeDiacriticalMarks",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": \"\"\r\n  },\r\n  \"type\": \"decomposeDiacriticalMarks\",\r\n  \"name\": \"Test Decompose Diacritical Marks Transform\"\r\n}",
+    "description": "decomposeDiacriticalMarks"
+  },
+  "e164phone": {
+    "prefix": "e164phone",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": {\r\n      \"attributes\": {\r\n        \"value\": \"0412345678\"\r\n      },\r\n      \"type\": \"static\"\r\n    },\r\n    \"defaultRegion\": \"AU\"\r\n  },\r\n  \"type\": \"e164phone\",\r\n  \"name\": \"Test E164Phone Transform\"\r\n}",
+    "description": "e164phone"
+  },
+  "firstValid": {
+    "prefix": "firstValid",
+    "body": "{\r\n  \"attributes\": {\r\n    \"values\": [\r\n      \"value1\",\r\n      \"value2\",\r\n      \"value3\"\r\n    ]\r\n  },\r\n  \"type\": \"firstValid\",\r\n  \"name\": \"Test First Valid Transform\"\r\n}",
+    "description": "firstValid"
+  },
+  "generateRandomString": {
+    "prefix": "generateRandomString",
+    "body": "{\r\n  \"attributes\": {\r\n    \"name\": \"Cloud Services Deployment Utility\",\r\n    \"operation\": \"generateRandomString\",\r\n    \"includeNumbers\": \"true\",\r\n    \"includeSpecialChars\": \"true\",\r\n    \"length\": \"16\"\r\n  },\r\n  \"type\": \"rule\",\r\n  \"name\": \"Test Generate Random String Transform\"\r\n}",
+    "description": "generateRandomString"
+  },
+  "getEndOfString": {
+    "prefix": "getEndOfString",
+    "body": "{\r\n  \"attributes\": {\r\n    \"name\": \"Cloud Services Deployment Utility\",\r\n    \"operation\": \"getEndOfString\",\r\n    \"numChars\": \"4\"\r\n  },\r\n  \"type\": \"rule\",\r\n  \"name\": \"Test Get End Of String Transform\"\r\n}",
+    "description": "getEndOfString"
+  },
+  "getReferenceIdentityAttribute": {
+    "prefix": "getReferenceIdentityAttribute",
+    "body": "{\r\n  \"attributes\": {\r\n    \"name\": \"Cloud Services Deployment Utility\",\r\n    \"operation\": \"getReferenceIdentityAttribute\",\r\n    \"uid\": \"manager\",\r\n    \"attributeName\": \"email\"\r\n  },\r\n  \"type\": \"rule\",\r\n  \"name\": \"Test Get Reference Identity Attribute Transform\"\r\n}",
+    "description": "getReferenceIdentityAttribute"
+  },
+  "identityAttribute": {
+    "prefix": "identityAttribute",
+    "body": "{\r\n  \"attributes\": {\r\n    \"name\": \"email\"\r\n  },\r\n  \"type\": \"identityAttribute\",\r\n  \"name\": \"Test Identity Attribute Transform\"\r\n}",
+    "description": "identityAttribute"
+  },
+  "indexOf": {
+    "prefix": "indexOf",
+    "body": "{\r\n  \"attributes\": {\r\n    \"substring\": \"admin_\"\r\n  },\r\n  \"type\": \"indexOf\",\r\n  \"name\": \"Test Index Of Transform\"\r\n}",
+    "description": "indexOf"
+  },
+  "iso3166": {
+    "prefix": "iso3166",
+    "body": "{\r\n  \"type\": \"iso3166\",\r\n  \"name\": \"Test ISO3166 Transform\"\r\n}",
+    "description": "iso3166"
+  },
+  "lastIndexOf": {
+    "prefix": "lastIndexOf",
+    "body": "{\r\n  \"attributes\": {\r\n    \"substring\": \"admin_\"\r\n  },\r\n  \"type\": \"lastIndexOf\",\r\n  \"name\": \"Test Last Index Of Transform\"\r\n}",
+    "description": "lastIndexOf"
+  },
+  "leftPad": {
+    "prefix": "leftPad",
+    "body": "{\r\n  \"attributes\": {\r\n    \"padding\": \"0\",\r\n    \"length\": 5\r\n  },\r\n  \"type\": \"leftPad\",\r\n  \"name\": \"Test Left Pad Transform\"\r\n}",
+    "description": "leftPad"
+  },
+  "lookup": {
+    "prefix": "lookup",
+    "body": "{\r\n  \"attributes\": {\r\n    \"table\": {\r\n      \"USA\": \"Americas\",\r\n      \"FRA\": \"EMEA\",\r\n      \"AUS\": \"APAC\",\r\n      \"default\": \"Unknown Region\"\r\n    }\r\n  },\r\n  \"type\": \"lookup\",\r\n  \"name\": \"Test Lookup Transform\"\r\n}",
+    "description": "lookup"
+  },
+  "lower": {
+    "prefix": "lower",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": \"\"\r\n  },\r\n  \"type\": \"lower\",\r\n  \"name\": \"Test Lower Transform\"\r\n}",
+    "description": "lower"
+  },
+  "normalizeNames": {
+    "prefix": "normalizeNames",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": \"\"\r\n  },\r\n  \"type\": \"normalizeNames\",\r\n  \"name\": \"Test Name Normalizer Transform\"\r\n}",
+    "description": "normalizeNames"
+  },
+  "randomAlphaNumeric": {
+    "prefix": "randomAlphaNumeric",
+    "body": "{\r\n  \"attributes\": {\r\n    \"length\": 10\r\n  },\r\n  \"type\": \"randomAlphaNumeric\",\r\n  \"name\": \"Test Random Alphanumeric Transform\"\r\n}",
+    "description": "randomAlphaNumeric"
+  },
+  "randomNumeric": {
+    "prefix": "randomNumeric",
+    "body": "{\r\n  \"attributes\": {\r\n    \"length\": 6\r\n  },\r\n  \"type\": \"randomNumeric\",\r\n  \"name\": \"Test Random Numeric Transform\"\r\n}",
+    "description": "randomNumeric"
+  },
+  "reference": {
+    "prefix": "reference",
+    "body": "{\r\n  \"attributes\": {\r\n    \"id\": \"Build Display Name\"\r\n  },\r\n  \"type\": \"reference\",\r\n  \"name\": \"Test Reference Transform\"\r\n}",
+    "description": "reference"
+  },
+  "replaceAll": {
+    "prefix": "replaceAll",
+    "body": "{\r\n  \"attributes\": {\r\n    \"table\": {\r\n      \"-\": \" \",\r\n      \"\\\"\": \"'\",\r\n      \"\u00F1\": \"n\"\r\n    }\r\n  },\r\n  \"type\": \"replaceAll\",\r\n  \"name\": \"Test Replace All Transform\"\r\n}",
+    "description": "replaceAll"
+  },
+  "replace": {
+    "prefix": "replace",
+    "body": "{\r\n  \"attributes\": {\r\n    \"regex\": \"IIQ\",\r\n    \"replacement\": \"IdentityNow\"\r\n  },\r\n  \"type\": \"replace\",\r\n  \"name\": \"Test Replace Transform\"\r\n}",
+    "description": "replace"
+  },
+  "rightPad": {
+    "prefix": "rightPad",
+    "body": "{\r\n  \"attributes\": {\r\n    \"padding\": \"0\",\r\n    \"length\": \"5\"\r\n  },\r\n  \"type\": \"rightPad\",\r\n  \"name\": \"Test Right Pad Transform\"\r\n}",
+    "description": "rightPad"
+  },
+  "rule": {
+    "prefix": "rule",
+    "body": "{\r\n  \"attributes\": {\r\n    \"name\": \"Generic Calculation Rule\"\r\n  },\r\n  \"type\": \"rule\",\r\n  \"name\": \"Test Rule Transform\"\r\n}",
+    "description": "rule"
+  },
+  "split": {
+    "prefix": "split",
+    "body": "{\r\n  \"attributes\": {\r\n    \"delimiter\": \",\",\r\n    \"index\": 5\r\n  },\r\n  \"type\": \"split\",\r\n  \"name\": \"Test Split Transform\"\r\n}",
+    "description": "split"
+  },
+  "static": {
+    "prefix": "static",
+    "body": "{\r\n  \"attributes\": {\r\n    \"workerType\": {\r\n      \"attributes\": {\r\n        \"values\": [\r\n          {\r\n            \"attributes\": {\r\n              \"sourceName\": \"HR Source\",\r\n              \"attributeName\": \"empType\"\r\n            },\r\n            \"type\": \"accountAttribute\"\r\n          },\r\n          \"null\"\r\n        ]\r\n      },\r\n      \"type\": \"firstValid\"\r\n    },\r\n    \"value\": \"#if($workerType == 'Employee')Full-Time#{else}Contingent#end\"\r\n  },\r\n  \"type\": \"static\",\r\n  \"name\": \"Test Static Transform\"\r\n}",
+    "description": "static"
+  },
+  "substring": {
+    "prefix": "substring",
+    "body": "{\r\n  \"attributes\": {\r\n    \"begin\": 1,\r\n    \"end\": 3,\r\n    \"beginOffset\": 1,\r\n    \"endOffset\": 2\r\n  },\r\n  \"type\": \"substring\",\r\n  \"name\": \"Test Substring Transform\"\r\n}",
+    "description": "substring"
+  },
+  "trim": {
+    "prefix": "trim",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": {\r\n      \"attributes\": {\r\n        \"value\": \"Melbourne, Australia \"\r\n      },\r\n      \"type\": \"static\"\r\n    }\r\n  },\r\n  \"type\": \"trim\",\r\n  \"name\": \"Test Trim Transform\"\r\n}",
+    "description": "trim"
+  },
+  "upper": {
+    "prefix": "upper",
+    "body": "{\r\n  \"attributes\": {\r\n    \"input\": \"\"\r\n  },\r\n  \"type\": \"upper\",\r\n  \"name\": \"Test Upper Transform\"\r\n}",
+    "description": "upper"
+  },
+  "usernameGenerator": {
+    "prefix": "usernameGenerator",
+    "body": "{\r\n  \"attributes\": {\r\n    \"cloudMaxSize\": \"100\",\r\n    \"cloudMaxUniqueChecks\": \"5\",\r\n    \"cloudRequired\": \"true\"\r\n  },\r\n  \"isRequired\": false,\r\n  \"multi\": false,\r\n  \"name\": \"distinguishedName\",\r\n  \"transform\": {\r\n    \"type\": \"usernameGenerator\",\r\n    \"attributes\": {\r\n      \"sourceCheck\": true,\r\n      \"patterns\": [\r\n        \"CN=$fi.$ln,OU=Users,DC=YourDomain,DC=com\",\r\n        \"CN=$fn.$ln,OU=Users,DC=YourDomain,DC=com\",\r\n        \"CN=$fn.$mi.$ln,OU=Users,DC=YourDomain,DC=com\",\r\n        \"CN=$fn.$mi.$ln$(uniqueCounter),OU=Users,DC=YourDomain,DC=com\"\r\n      ],\r\n      \"fn\": {\r\n        \"type\": \"identityAttribute\",\r\n        \"attributes\": {\r\n          \"name\": \"firstname\"\r\n        }\r\n      },\r\n      \"ln\": {\r\n        \"type\": \"identityAttribute\",\r\n        \"attributes\": {\r\n          \"name\": \"lastname\"\r\n        }\r\n      },\r\n      \"fi\": {\r\n        \"type\": \"substring\",\r\n        \"attributes\": {\r\n          \"input\": {\r\n            \"type\": \"identityAttribute\",\r\n            \"attributes\": {\r\n              \"name\": \"firstname\"\r\n            }\r\n          },\r\n          \"begin\": 0,\r\n          \"end\": 1\r\n        }\r\n      },\r\n      \"mi\": {\r\n        \"type\": \"substring\",\r\n        \"attributes\": {\r\n          \"input\": {\r\n            \"type\": \"identityAttribute\",\r\n            \"attributes\": {\r\n              \"name\": \"middlename\"\r\n            }\r\n          },\r\n          \"begin\": 0,\r\n          \"end\": 1\r\n        }\r\n      }\r\n    }\r\n  },\r\n  \"type\": \"\"\r\n}",
+    "description": "usernameGenerator"
+  },
+  "uuid": {
+    "prefix": "uuid",
+    "body": "{\r\n  \"type\": \"uuid\",\r\n  \"name\": \"Test UUID Generator Transform\"\r\n}",
+    "description": "uuid"
+  }
+}
